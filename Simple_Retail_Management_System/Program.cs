@@ -1,3 +1,16 @@
-﻿using Simple_Retail_Management_System.Views;
+﻿using Simple_Retail_Management_System.Controllers;
+using Simple_Retail_Management_System.Data.Models;
+using Simple_Retail_Management_System.Views;
 
-var display = new Display();
+
+public class Program
+{
+    private static void Main(string[] args)
+    {
+
+
+
+
+
+    }
+}

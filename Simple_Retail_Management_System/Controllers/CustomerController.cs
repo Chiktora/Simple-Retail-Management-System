@@ -1,4 +1,5 @@
 ﻿using Simple_Retail_Management_System.Controllers.Interfaces;
+using Simple_Retail_Management_System.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Simple_Retail_Management_System.Controllers
 {
-    public class ProducerController : IEssentialable<ProducerController>
+    public class CustomerController : IEssentialable<Customer>
     {
-        public void Add(ProducerController item)
+        public void Add(Customer item)
         {
             throw new NotImplementedException();
         }
@@ -19,17 +20,17 @@ namespace Simple_Retail_Management_System.Controllers
             throw new NotImplementedException();
         }
 
-        public ProducerController Get(int id)
+        public Customer Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<ProducerController> GetAll()
+        public List<Customer> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public void Upgrade(ProducerController item)
+        public void Upgrade(Customer item)
         {
             throw new NotImplementedException();
         }

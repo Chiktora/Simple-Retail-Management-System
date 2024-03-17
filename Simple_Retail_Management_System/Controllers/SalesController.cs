@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Simple_Retail_Management_System.Controllers
 {
-    public class ReceiptHistoryController
+    public class SalesController
     {
     }
 }

@@ -21,13 +21,14 @@ namespace Simple_Retail_Management_System.Data
             
         }
 
-        public DbSet<Store> Stores { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<SoldProduct> SoldProducts { get; set; }
-        public DbSet<ReceiptHistory> ReceiptHistories { get; set; }
-        public DbSet<Price> Prices { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Producer> Producers { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Sale> Sales { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -42,6 +43,54 @@ namespace Simple_Retail_Management_System.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+            //Configure precision for decimal properties
+            modelBuilder.Entity<Product>()
+                .Property(p => p.Price)
+                .HasPrecision(18, 2); // Sets the precision to 18 digits with 2 decimal places
+
+            modelBuilder.Entity<Sale>()
+                .Property(s => s.SalesPrice)
+                .HasPrecision(18, 2); // Sets the precision to 18 digits with 2 decimal places
+
+            // Set up relationships and navigation properties
+            modelBuilder.Entity<Sale>()
+                .HasOne(s => s.Employee)
+                .WithMany(e => e.Sales)
+                .HasForeignKey(s => s.EmployeeId);
+
+            modelBuilder.Entity<Sale>()
+                .HasOne(s => s.Customer)
+                .WithMany(c => c.Sales)
+                .HasForeignKey(s => s.CustomerId)
+                .IsRequired(false); ;
+
+            modelBuilder.Entity<OrderDetail>()
+                .HasOne(od => od.Sale)
+                .WithMany(s => s.OrderDetails)
+                .HasForeignKey(od => od.SaleId);
+
+            modelBuilder.Entity<OrderDetail>()
+                .HasOne(od => od.Product)
+                .WithMany(p => p.OrderDetails)
+                .HasForeignKey(od => od.ProductId);
+
+            modelBuilder.Entity<Product>()
+                .HasOne(p => p.Producer)
+                .WithMany(pr => pr.Products)
+                .HasForeignKey(p => p.ProducerId)
+                .OnDelete(DeleteBehavior.Restrict); // Prevent cascade delete
+
+            modelBuilder.Entity<Product>()
+                .HasOne(p => p.Category)
+                .WithMany(c => c.Products)
+                .HasForeignKey(p => p.CategoryId)
+                .OnDelete(DeleteBehavior.Restrict); // Prevent cascade delete
+
+             modelBuilder.Entity<OrderDetail>().HasKey(od => new { od.SaleId, od.ProductId });
+
+            modelBuilder.Entity<Product>().HasIndex(p => p.Barcode).IsUnique();
+
             base.OnModelCreating(modelBuilder);
         }
     }
