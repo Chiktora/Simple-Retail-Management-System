@@ -1,4 +1,5 @@
 ﻿using Simple_Retail_Management_System.Controllers.Interfaces;
+using Simple_Retail_Management_System.Data;
 using Simple_Retail_Management_System.Data.Models;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,63 @@ namespace Simple_Retail_Management_System.Controllers
 {
     public class EmployeeController : IEssentialable<Employee>
     {
+        private ShopContext context;
+
+        public EmployeeController()
+        {
+            this.context = new ShopContext();
+        }
         public void Add(Employee item)
         {
-            throw new NotImplementedException();
+            var existingItem = this.context.Employees.Find(item.Id);
+            if (existingItem == null)
+            {
+                this.context.Employees.Add(item);
+                this.context.SaveChanges();
+            }
+            else
+            {
+                throw new ArgumentException("Employee is present");
+            }
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var item = this.Get(id);
+            if (item != null)
+            {
+                this.context.Employees.Remove(item);
+
+            }
+            else
+            {
+                throw new ArgumentException("Category not found");
+            }
         }
 
         public Employee Get(int id)
         {
-            throw new NotImplementedException();
+            var item = context.Employees.FirstOrDefault(x => x.Id == id);
+            return item;
         }
 
         public List<Employee> GetAll()
         {
-            throw new NotImplementedException();
+            return context.Employees.ToList();
         }
 
         public void Upgrade(Employee item)
         {
-            throw new NotImplementedException();
+            var existingItem = this.Get(item.Id);
+            if (existingItem != null)
+            {
+                this.context.Entry(existingItem).CurrentValues.SetValues(item);
+                this.context.SaveChanges();
+            }
+            else
+            {
+                throw new ArgumentException("Employee not found");
+            }
         }
     }
 }

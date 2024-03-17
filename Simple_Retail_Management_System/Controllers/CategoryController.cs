@@ -17,12 +17,12 @@ namespace Simple_Retail_Management_System.Controllers
         {
             this.context = new ShopContext();
         }
-        public void Add(Category category)
+        public void Add(Category item)
         {
-            var existingCategory = this.context.Categories.Find(category.Id);
-            if (existingCategory == null) 
+            var existingItem = this.context.Categories.Find(item.Id);
+            if (existingItem == null) 
             {
-                this.context.Categories.Add(category);
+                this.context.Categories.Add(item);
                 this.context.SaveChanges();
             }
             else
@@ -32,13 +32,12 @@ namespace Simple_Retail_Management_System.Controllers
 
             
         }
-
         public void Delete(int id)
         {
-            var category = this.Get(id);  
-            if (category != null)
+            var item = this.Get(id);  
+            if (item != null)
             {
-                this.context.Categories.Remove(category);
+                this.context.Categories.Remove(item);
                 
             }
             else 
@@ -51,8 +50,8 @@ namespace Simple_Retail_Management_System.Controllers
 
         public Category Get(int id)
         {
-            var category = context.Categories.FirstOrDefault(x => x.Id == id);
-            return category;        
+            var item = context.Categories.FirstOrDefault(x => x.Id == id);
+            return item;        
             
         }
 
@@ -62,12 +61,12 @@ namespace Simple_Retail_Management_System.Controllers
             return context.Categories.ToList();
         }
 
-        public void Upgrade(Category category)
+        public void Upgrade(Category item)
         {
-            var existingCategory = this.Get(category.Id);
-            if (existingCategory != null) 
+            var existingItem = this.Get(item.Id);
+            if (existingItem != null) 
             {        
-                this.context.Entry(existingCategory).CurrentValues.SetValues(category);
+                this.context.Entry(existingItem).CurrentValues.SetValues(item);
                 this.context.SaveChanges();
             }
             else 

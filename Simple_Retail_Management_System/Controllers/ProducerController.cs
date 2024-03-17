@@ -1,4 +1,6 @@
 ﻿using Simple_Retail_Management_System.Controllers.Interfaces;
+using Simple_Retail_Management_System.Data;
+using Simple_Retail_Management_System.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,31 +9,65 @@ using System.Threading.Tasks;
 
 namespace Simple_Retail_Management_System.Controllers
 {
-    public class ProducerController : IEssentialable<ProducerController>
+    public class ProducerController : IEssentialable<Producer>
     {
-        public void Add(ProducerController item)
+        private ShopContext context;
+
+        public ProducerController()
         {
-            throw new NotImplementedException();
+            this.context = new ShopContext();
+        }
+        public void Add(Producer item)
+        {
+            var existingItem = this.context.Producers.Find(item.Id);
+            if (existingItem == null)
+            {
+                this.context.Producers.Add(item);
+                this.context.SaveChanges();
+            }
+            else
+            {
+                throw new ArgumentException("Producer is present");
+            }
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var item = this.Get(id);
+            if (item != null)
+            {
+                this.context.Producers.Remove(item);
+
+            }
+            else
+            {
+                throw new ArgumentException("Producer not found");
+            }
         }
 
-        public ProducerController Get(int id)
+        public Producer Get(int id)
         {
-            throw new NotImplementedException();
+            var item = context.Producers.FirstOrDefault(x => x.Id == id);
+            return item;
         }
 
-        public List<ProducerController> GetAll()
+        public List<Producer> GetAll()
         {
-            throw new NotImplementedException();
+            return context.Producers.ToList();
         }
 
-        public void Upgrade(ProducerController item)
+        public void Upgrade(Producer item)
         {
-            throw new NotImplementedException();
+            var existingItem = this.Get(item.Id);
+            if (existingItem != null)
+            {
+                this.context.Entry(existingItem).CurrentValues.SetValues(item);
+                this.context.SaveChanges();
+            }
+            else
+            {
+                throw new ArgumentException("Producer not found");
+            }
         }
     }
 }
