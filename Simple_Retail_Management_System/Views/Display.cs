@@ -52,7 +52,7 @@ namespace Simple_Retail_Management_System.Views
         }
 
 
-        public void ShowMainMenu()
+        public void Menu()
         {
             Console.WriteLine(new string('-', 18) + "MENU" + new string('-', 18));
             Console.WriteLine("1.Category Menu");
