@@ -61,7 +61,7 @@ namespace Simple_Retail_Management_System.Controllers
             return context.Categories.ToList();
         }
 
-        public void Upgrade(Category item)
+        public void Update(Category item)
         {
             var existingItem = this.Get(item.Id);
             if (existingItem != null) 

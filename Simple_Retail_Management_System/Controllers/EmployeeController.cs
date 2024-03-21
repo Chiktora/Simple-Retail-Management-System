@@ -56,7 +56,7 @@ namespace Simple_Retail_Management_System.Controllers
             return context.Employees.ToList();
         }
 
-        public void Upgrade(Employee item)
+        public void Update(Employee item)
         {
             var existingItem = this.Get(item.Id);
             if (existingItem != null)

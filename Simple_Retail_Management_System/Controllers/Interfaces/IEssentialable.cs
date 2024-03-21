@@ -20,7 +20,7 @@ namespace Simple_Retail_Management_System.Controllers.Interfaces
         public void Add(T item);
 
         // Update item in table
-        public void Upgrade(T item);
+        public void Update(T item);
 
         // Delete item by id
         public void Delete(int id);

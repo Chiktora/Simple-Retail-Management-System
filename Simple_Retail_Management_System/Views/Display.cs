@@ -15,10 +15,12 @@ namespace Simple_Retail_Management_System.Views
 
         public void Input()
         {
+            int operation = -1;
             do
             {
+                
                 Menu();
-                int operation = int.Parse(Console.ReadLine());
+                 operation = int.Parse(Console.ReadLine());
                 switch (operation)
                 {
                     case 1:
@@ -31,7 +33,7 @@ namespace Simple_Retail_Management_System.Views
                         EmployeeDisplay employeeDisplay = new EmployeeDisplay();
                         break;
                     case 4:
-                        OrderDetailDisplay orderDetailDisplay = new OrderDetailDisplay();
+                        //OrderDetailDisplay orderDetailDisplay = new OrderDetailDisplay();
                         break;
                     case 5:
                         ProducerDisplay producerDisplay = new ProducerDisplay();
