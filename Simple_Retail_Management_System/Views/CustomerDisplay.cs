@@ -1,7 +1,6 @@
 l﻿namespace Simple_Retail_Management_System.Views
 {
-    internal class CustomerDisplay
-    {
+    
         public class CustomerDisplay
 {
     CustomerController customerController;
@@ -147,5 +146,5 @@ l﻿namespace Simple_Retail_Management_System.Views
 
 
 }
-    }
+    
 }
