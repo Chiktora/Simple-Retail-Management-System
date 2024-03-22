@@ -2,6 +2,18 @@
 {
     public class Sale
     {
+        public Sale()
+        {
+            
+        }
+        public Sale(int employeeId, int customerId, DateTime saleDate, decimal salesPrice)//vse oshte ne znam dali dateTime sushtestvuva
+        {
+            EmployeeId = employeeId;
+            CustomerId = customerId;
+            SaleDate = saleDate;
+            SalesPrice = salesPrice;
+        }
+        
         public int Id { get; set; }
         public int EmployeeId { get; set; }
         public int? CustomerId { get; set; }
