@@ -10,6 +10,21 @@ namespace Simple_Retail_Management_System.Data.Models
 {
     public class Product
     {
+        public Product()
+        {
+            
+        }
+        public Product(string barcode, string name, int stockQuantity, decimal price, int producerId, int categoryId, string additionalText)
+        {
+            Barcode = barcode
+            Name = name;
+            StockQuantity = stockQuantity;
+            Price = price;
+            ProducerId = producerId;
+            CategoryId = categoryId;
+            AdditionalText = additionalText;
+        }
+        
         public int Id { get; set; }
         public string Barcode { get; set; }
         public string Name { get; set; }
