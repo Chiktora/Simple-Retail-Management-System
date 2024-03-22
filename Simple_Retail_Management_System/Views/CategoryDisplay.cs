@@ -47,7 +47,7 @@ public class CategoryDisplay
                 UpdateCategory();
                 break;
             default:
-                Console.WriteLine("Option not available!\nReturning to main menu...");
+                Console.WriteLine("Option not available!\nReturning to Main Menu.");
                 break;
         }
 
