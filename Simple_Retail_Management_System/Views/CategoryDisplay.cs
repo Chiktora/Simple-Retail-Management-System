@@ -117,7 +117,7 @@ public class CategoryDisplay
         Category cat = categoryController.Get(id);
         if (cat != null)
         {
-            Console.WriteLine($"Name(old name: {cat.CategoryName} ): ");
+            Console.WriteLine($"Name: ");
             cat.CategoryName = Console.ReadLine();
             categoryController.Update(cat);
         }
