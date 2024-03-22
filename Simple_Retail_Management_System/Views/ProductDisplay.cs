@@ -79,5 +79,13 @@ public class ProductDisplay
                 productController.DeleteProduct(deleteBarcode);
                 Console.WriteLine("Product deleted successfully.");
     }
+     private void ShowProduct()
+    {
+         Console.Write("Enter barcode of the product to read: ");
+                string readBarcode = Console.ReadLine();
+                Product product = productController.ReadProduct(readBarcode);
+                Console.WriteLine($"Product Name: {product.Name}, Quantity: {product.StockQuantity}, Price: {product.Price}");
+    }
+    //v kontrolera nqma metod za vzimane na vsichki
     }
 }
