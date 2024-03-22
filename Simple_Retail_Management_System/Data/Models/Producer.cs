@@ -12,7 +12,7 @@ namespace Simple_Retail_Management_System.Data.Models
         {
             
         }
-        public Producer(int name, int phoneNumber, int email)
+        public Producer(string name, string phoneNumber, string email)
         {
             Name = name;
             PhoneNumber = phoneNumber;
