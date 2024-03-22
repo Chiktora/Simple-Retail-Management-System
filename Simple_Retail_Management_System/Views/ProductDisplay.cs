@@ -72,5 +72,12 @@ public class ProductDisplay
                 string additionalText = Console.ReadLine();
                 productController.AddProduct(barcode, name, stockQuantity, price, producerName, categoryName, additionalText);
     }
+    private void DeleteProduct()
+    {
+                Console.Write("Enter barcode of the product to delete: ");
+                string deleteBarcode = Console.ReadLine();
+                productController.DeleteProduct(deleteBarcode);
+                Console.WriteLine("Product deleted successfully.");
+    }
     }
 }
