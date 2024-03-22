@@ -11,7 +11,7 @@ namespace Simple_Retail_Management_System.Controllers
 {
     public class ProductController
     {
-         private readonly ShopContext context;
+         private ShopContext context;
 
         public ProductController()
         {
@@ -105,6 +105,26 @@ namespace Simple_Retail_Management_System.Controllers
             }
 
             return product;
+        }
+
+        public List<Product> GetProductsByProducer(string producerName)
+        {
+            var products = context.Products
+                .Include(p => p.Producer)
+                .Where(p => p.Producer.Name == producerName)
+                .ToList();
+
+            return products;
+        }
+
+        public List<Product> GetProductsByCategory(string categoryName)
+        {
+            var products = context.Products
+                .Include(p => p.Category)
+                .Where(p => p.Category.CategoryName == categoryName)
+                .ToList();
+
+            return products;
         }
     }
 }

@@ -2,11 +2,11 @@
 {
     public class Customer
     {
-        public Category()
+        public Customer()
         {
             
         }
-        public Category(string name, string phoneNumber, string email)
+        public Customer(string name, string phoneNumber, string email)
         {
             Name = name;
             PhoneNumber = phoneNumber;

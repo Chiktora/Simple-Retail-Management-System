@@ -16,7 +16,7 @@ namespace Simple_Retail_Management_System.Data.Models
         }
         public Product(string barcode, string name, int stockQuantity, decimal price, int producerId, int categoryId, string additionalText)
         {
-            Barcode = barcode
+            Barcode = barcode;
             Name = name;
             StockQuantity = stockQuantity;
             Price = price;

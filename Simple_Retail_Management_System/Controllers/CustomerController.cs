@@ -34,15 +34,8 @@ namespace Simple_Retail_Management_System.Controllers
         public void Delete(int id)
         {
             var item = this.Get(id);
-            if (item != null)
-            {
-                this.context.Customers.Remove(item);
-
-            }
-            else
-            {
-                throw new ArgumentException("Customer not found");
-            }
+            this.context.Customers.Remove(item);
+            this.context.SaveChanges();
         }
 
         public Customer Get(int id)

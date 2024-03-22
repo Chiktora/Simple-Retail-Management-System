@@ -34,15 +34,8 @@ namespace Simple_Retail_Management_System.Controllers
         public void Delete(int id)
         {
             var item = this.Get(id);
-            if (item != null)
-            {
-                this.context.Employees.Remove(item);
-
-            }
-            else
-            {
-                throw new ArgumentException("Category not found");
-            }
+            this.context.Employees.Remove(item);
+            this.context.SaveChanges();
         }
 
         public Employee Get(int id)

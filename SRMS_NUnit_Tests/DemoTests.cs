@@ -36,7 +36,7 @@ namespace YourProjectName.Tests
             mockContext = new Mock<ShopContext>();
             mockContext.Setup(c => c.Categories).Returns(mockSet.Object);
 
-            controller = new CategoryController(mockContext.Object);
+            //controller = new CategoryController(mockContext.Object);
         }
 
         [Test]

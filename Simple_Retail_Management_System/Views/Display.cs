@@ -33,24 +33,22 @@ namespace Simple_Retail_Management_System.Views
                         EmployeeDisplay employeeDisplay = new EmployeeDisplay();
                         break;
                     case 4:
-                        //OrderDetailDisplay orderDetailDisplay = new OrderDetailDisplay();
-                        break;
-                    case 5:
                         ProducerDisplay producerDisplay = new ProducerDisplay();
                         break;
-                    case 6:
+                    case 5:
                         ProductDisplay productDisplay = new ProductDisplay();
                         break;
-                    case 7:
+                    case 6:
                         SalesDisplay salesDisplay = new SalesDisplay();
                         break;
-                    case 8: 
+                    case 7:
+                        Console.WriteLine("Program Exit");
                         break;
                     default:
                         Console.WriteLine("Option is not available!");
                         break;
                 }
-            } while (operation != 8);
+            } while (operation != 7);
         }
 
 
@@ -60,11 +58,11 @@ namespace Simple_Retail_Management_System.Views
             Console.WriteLine("1.Category Menu");
             Console.WriteLine("2.Customer Menu");
             Console.WriteLine("3.Employee Menu");
-            Console.WriteLine("4.Order Details Menu");
-            Console.WriteLine("5.Producer Menu");
-            Console.WriteLine("6.Product Menu");
-            Console.WriteLine("7.Sales Menu");
+            Console.WriteLine("4.Producer Menu");
+            Console.WriteLine("5.Product Menu");
+            Console.WriteLine("6.Sales Menu");
+            Console.WriteLine("7 Program Exit");
             Console.WriteLine(new string('-', 40));
-        }//utre she napravq samite klasove
+        }
     }
 }

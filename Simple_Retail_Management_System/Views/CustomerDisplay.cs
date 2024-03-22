@@ -1,7 +1,9 @@
-l﻿namespace Simple_Retail_Management_System.Views
-{
-    
-        public class CustomerDisplay
+
+
+using Simple_Retail_Management_System.Controllers;
+using Simple_Retail_Management_System.Data.Models;
+
+public class CustomerDisplay
 {
     CustomerController customerController;
 
@@ -53,7 +55,7 @@ l﻿namespace Simple_Retail_Management_System.Views
 
     }
 
-    private void AddCategory()
+    private void AddCustomer()
     {
         Customer cus = new Customer();
 
@@ -68,7 +70,7 @@ l﻿namespace Simple_Retail_Management_System.Views
     }
 
 
-    private void DeleteCategory()
+    private void DeleteCustomer()
     {
         Console.WriteLine("Enter ID to delete: ");
         int id = int.Parse(Console.ReadLine());
@@ -121,7 +123,7 @@ l﻿namespace Simple_Retail_Management_System.Views
     }
 
 
-    private void UpdateCategory()
+    private void UpdateCustomer()
     {
         Console.WriteLine("Enter ID to Update: ");
         int id = int.Parse(Console.ReadLine());
@@ -147,4 +149,4 @@ l﻿namespace Simple_Retail_Management_System.Views
 
 }
     
-}
+
