@@ -6,7 +6,7 @@
         {
             
         }
-        public Employee(string name, string phoneNumber, string email, string position, DateTime hireDate)
+        public Employee(string name, string phoneNumber, string email, string position, DateTime hireDate)//nz dali sushtestvuva neshto kato DateTime
         {
             Name = name;
             PhoneNumber = phoneNumber;
