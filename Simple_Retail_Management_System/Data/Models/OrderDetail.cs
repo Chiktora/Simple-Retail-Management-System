@@ -2,6 +2,17 @@
 {
     public class OrderDetail
     {
+        public OrderDetail()
+        {
+            
+        }
+        public OrderDetail(int saleId, int productId, int quantity)
+        {
+            SaleId = saleId;
+            ProductId = productId;
+            Quantity = quantity;
+        }
+        
         public int Id { get; set; }
         public int SaleId { get; set; }
         public int ProductId { get; set; }
