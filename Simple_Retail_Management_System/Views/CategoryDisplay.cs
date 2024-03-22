@@ -70,7 +70,7 @@ public class CategoryDisplay
         if (cat != null)
         {
             categoryController.Delete(id);
-            Console.WriteLine("Done.");
+            Console.WriteLine("Category deleted.");
         }
         else
         {
