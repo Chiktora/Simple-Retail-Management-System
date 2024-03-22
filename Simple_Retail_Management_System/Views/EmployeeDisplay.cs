@@ -86,7 +86,7 @@
     }
 
 
-    private void ShowCustomer()
+    private void ShowEmployee()
     {
         Console.WriteLine("Enter ID to show: ");
         int id = int.Parse(Console.ReadLine());
