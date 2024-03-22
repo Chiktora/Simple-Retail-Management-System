@@ -51,5 +51,26 @@ public class ProductDisplay
         }
 
     }
+     private void AddProduct()
+    {
+        Product prod = new Product();
+
+        Console.WriteLine("Enter product details:");
+                Console.Write("Barcode: ");
+                string barcode = Console.ReadLine();
+                Console.Write("Name: ");
+                string name = Console.ReadLine();
+                Console.Write("Stock Quantity: ");
+                int stockQuantity = int.Parse(Console.ReadLine());
+                Console.Write("Price: ");
+                decimal price = decimal.Parse(Console.ReadLine());
+                Console.Write("Producer Name: ");
+                string producerName = Console.ReadLine();
+                Console.Write("Category Name: ");
+                string categoryName = Console.ReadLine();
+                Console.Write("Additional Text: ");
+                string additionalText = Console.ReadLine();
+                productController.AddProduct(barcode, name, stockQuantity, price, producerName, categoryName, additionalText);
+    }
     }
 }
