@@ -87,5 +87,25 @@ public class ProductDisplay
                 Console.WriteLine($"Product Name: {product.Name}, Quantity: {product.StockQuantity}, Price: {product.Price}");
     }
     //v kontrolera nqma metod za vzimane na vsichki
+     private void UpdateProduct()
+    {
+             Console.WriteLine("Enter product details to update:");
+             Console.Write("Barcode: ");
+             string editBarcode = Console.ReadLine();
+             Console.Write("New Name: ");
+             string newName = Console.ReadLine();
+             Console.Write("New Stock Quantity: ");
+             int newStockQuantity = int.Parse(Console.ReadLine());
+             Console.Write("New Price: ");
+             decimal newPrice = decimal.Parse(Console.ReadLine());
+             Console.Write("New Producer Name: ");
+             string newProducerName = Console.ReadLine();
+             Console.Write("New Category Name: ");
+             string newCategoryName = Console.ReadLine();
+             Console.Write("New Additional Text: ");
+             string newAdditionalText = Console.ReadLine();
+             productController.EditProduct(editBarcode, newName, newStockQuantity, newPrice, newProducerName, newCategoryName, newAdditionalText);
+             Console.WriteLine("Product updated successfully.");
+    }
     }
 }
