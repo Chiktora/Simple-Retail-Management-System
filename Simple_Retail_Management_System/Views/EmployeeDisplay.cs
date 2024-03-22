@@ -91,7 +91,7 @@
         Console.WriteLine("Enter ID to show: ");
         int id = int.Parse(Console.ReadLine());
         Employee emp = employeeController.Get(id);
-        if (cus != null)
+        if (emp != null)
         {
             Console.WriteLine(new string('-', 40));
             Console.WriteLine("ID: " + emp.Id);
