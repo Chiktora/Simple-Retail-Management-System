@@ -1,4 +1,4 @@
-﻿namespace Simple_Retail_Management_System.Views
+l﻿namespace Simple_Retail_Management_System.Views
 {
     internal class CustomerDisplay
     {
@@ -136,7 +136,7 @@
             Console.WriteLine($"Email: ");
             cus.Email = Console.ReadLine();
 
-            categoryController.Update(cat);
+            customerController.Update(cus);
         }
         else
         {
