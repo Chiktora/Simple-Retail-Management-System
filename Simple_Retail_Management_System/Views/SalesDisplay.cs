@@ -11,6 +11,9 @@ namespace Simple_Retail_Management_System.Views
             SalesInput();
         }
 
+        /// <summary>
+        /// Enter a number based on the menu and it executes the corresponding method
+        /// </summary>
         private void SalesInput()
         {
             int operation = 0;
@@ -40,7 +43,9 @@ namespace Simple_Retail_Management_System.Views
                 }
             } while (operation != 4); 
         }
-
+        /// <summary>
+        /// Prints out a menu for sales
+        /// </summary>
         private void SalesMenu()
         {
             Console.Clear();
@@ -93,7 +98,9 @@ namespace Simple_Retail_Management_System.Views
                 Console.WriteLine($"An error occurred: {ex.Message}");
             }
         }
-
+        /// <summary>
+        /// Prints out the properties of a sale by ID
+        /// </summary>
         public static void ReadSale(SalesController salesService)
         {
             Console.Clear(); // Clears the console for a clean start
@@ -148,7 +155,9 @@ namespace Simple_Retail_Management_System.Views
             Console.ReadKey();
         }
 
-
+        /// <summary>
+        /// Deletes a sale by the ID given
+        /// </summary>
         public static void DeleteSale(SalesController salesService)
         {
             Console.Clear(); // Optional: Clears the console for a clean start
