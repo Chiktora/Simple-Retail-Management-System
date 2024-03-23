@@ -22,7 +22,9 @@ namespace Simple_Retail_Management_System.Controllers
             context = new ShopContext();
         }
 
-
+        /// <summary>
+        /// Deletes a category from the context by ID
+        /// </summary>
         public void DeleteSale(int saleId)
         {
             var sale = context.Sales.Include(s => s.OrderDetails).FirstOrDefault(s => s.Id == saleId);
@@ -110,7 +112,9 @@ namespace Simple_Retail_Management_System.Controllers
             public string PhoneNumber { get; set; }
             public string Email { get; set; }
         }
-
+        /// <summary>
+        /// Retrieves a sale by ID
+        /// </summary>
         public SaleDetailsDto GetSaleDetails(int saleId)
         {
             var sale = context.Sales
