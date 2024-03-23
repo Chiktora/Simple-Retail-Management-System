@@ -62,7 +62,7 @@ namespace Simple_Retail_Management_System.Views
 
         }
         /// <summary>
-        /// Adds a new category based on the inputs of the user
+        /// Adds a new employee based on the inputs of the user
         /// </summary>
         private void AddEmployee()
         {
@@ -88,7 +88,7 @@ namespace Simple_Retail_Management_System.Views
 
 
         /// <summary>
-        /// Deletes a category by the ID given
+        /// Deletes a employee by the ID given
         /// </summary>
         private void DeleteEmployee()
         {
@@ -118,7 +118,7 @@ namespace Simple_Retail_Management_System.Views
         }
 
         /// <summary>
-        /// Prints out the properties of a category by ID
+        /// Prints out the properties of a employee by ID
         /// </summary>
         private void ShowEmployee()
         {
@@ -147,7 +147,7 @@ namespace Simple_Retail_Management_System.Views
         }
 
         /// <summary>
-        /// Prints out the properties of all categories
+        /// Prints out the properties of all employees
         /// </summary>
         private void ShowAllEmployees()
         {
@@ -164,7 +164,7 @@ namespace Simple_Retail_Management_System.Views
         }
 
         /// <summary>
-        /// Updates the properties of a category by ID
+        /// Updates the properties of a employee by ID
         /// </summary>
         private void UpdateEmployee()
         {
