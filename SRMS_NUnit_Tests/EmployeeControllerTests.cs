@@ -88,6 +88,8 @@ using System.Linq;
         var result = _controller.GetAll();
         ClassicAssert.AreEqual(2, result.Count); // Assuming 2 employees are set up in Setup()
     }
+
+
     [Test]
     public void Update_NonExistingEmployee_ShouldThrowArgumentException()
     {
