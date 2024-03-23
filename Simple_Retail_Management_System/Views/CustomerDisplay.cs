@@ -12,7 +12,9 @@ public class CustomerDisplay
         customerController = new CustomerController();
         CustomerInput();
     }
-
+        /// <summary>
+        /// Prints out a menu for customer
+        /// </summary>
     public void CustomerMenu()
     {
         Console.Clear();
@@ -27,7 +29,9 @@ public class CustomerDisplay
 
     }
 
-
+        /// <summary>
+        /// Enter a number based on the menu and it executes the corresponding method
+        /// </summary>
     private void CustomerInput()
     {
         CustomerMenu();
@@ -58,6 +62,9 @@ public class CustomerDisplay
 
     }
 
+        /// <summary>
+        /// Adds a new customer based on the inputs of the user
+        /// </summary>
     private void AddCustomer()
     {
         Console.Clear();
@@ -79,7 +86,9 @@ public class CustomerDisplay
     }
 
 
-
+        /// <summary>
+        /// Deletes a customer by the ID given
+        /// </summary>
     private void DeleteCustomer()
     {
         Console.Clear();
@@ -108,7 +117,9 @@ public class CustomerDisplay
     }
 
 
-
+        /// <summary>
+        /// Prints out the properties of a customer by ID
+        /// </summary>
     private void ShowCustomer()
     {
         Console.Clear();
@@ -136,7 +147,9 @@ public class CustomerDisplay
     }
 
 
-
+        /// <summary>
+        /// Prints out the properties of all customers
+        /// </summary>
     private void ShowAllCustomers()
     {
         Console.Clear();
@@ -152,7 +165,9 @@ public class CustomerDisplay
     }
 
 
-
+        /// <summary>
+        /// Updates the properties of a customer by ID
+        /// </summary>
     private void UpdateCustomer()
     {
         Console.Clear();

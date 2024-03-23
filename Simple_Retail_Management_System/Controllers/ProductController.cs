@@ -21,7 +21,9 @@ namespace Simple_Retail_Management_System.Controllers
         {
             context = new ShopContext();
         }
-
+        /// <summary>
+        /// Adds a new product to the context
+        /// </summary>
         public void AddProduct(string barcode, string name, int stockQuantity, decimal price, string producerName, string categoryName, string additionalText)
         {
             //Check if the producer is present.
@@ -52,7 +54,9 @@ namespace Simple_Retail_Management_System.Controllers
             context.Products.Add(product);
             context.SaveChanges();
         }
-
+        /// <summary>
+        /// Deletes a product from the context by ID
+        /// </summary>
         public void DeleteProduct(string barcode)
         {
             var product = context.Products.FirstOrDefault(p => p.Barcode == barcode);
@@ -64,7 +68,9 @@ namespace Simple_Retail_Management_System.Controllers
             context.Products.Remove(product);
             context.SaveChanges();
         }
-
+        /// <summary>
+        /// Updates an existing product
+        /// </summary>
         public void EditProduct(string barcode, string newName, int newStockQuantity, decimal newPrice, string newProducerName, string newCategoryName, string newAdditionalText)
         {
             var product = context.Products
@@ -99,7 +105,9 @@ namespace Simple_Retail_Management_System.Controllers
 
             context.SaveChanges();
         }
-
+        /// <summary>
+        /// Retrieves a product by ID
+        /// </summary>
         public Product ReadProduct(string barcode)
         {
             var product = context.Products
@@ -114,7 +122,9 @@ namespace Simple_Retail_Management_System.Controllers
 
             return product;
         }
-
+        /// <summary>
+        /// Retrieves a list of products by the name of their producer.
+        /// </summary>
         public List<Product> GetProductsByProducer(string producerName)
         {
             var products = context.Products
@@ -124,7 +134,9 @@ namespace Simple_Retail_Management_System.Controllers
 
             return products;
         }
-
+        /// <summary>
+        /// Retrieves a list of products by their category name.
+        /// </summary>
         public List<Product> GetProductsByCategory(string categoryName)
         {
             var products = context.Products

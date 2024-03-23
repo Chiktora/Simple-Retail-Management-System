@@ -12,7 +12,9 @@ namespace Simple_Retail_Management_System.Views
             employeeController = new EmployeeController();
             EmployeeInput();
         }
-
+        /// <summary>
+        /// Prints out a menu for employee
+        /// </summary>
         public void EmployeeMenu()
         {
             Console.Clear();
@@ -27,7 +29,9 @@ namespace Simple_Retail_Management_System.Views
 
         }
 
-
+        /// <summary>
+        /// Enter a number based on the menu and it executes the corresponding method
+        /// </summary>
         private void EmployeeInput()
         {
             EmployeeMenu();
@@ -57,7 +61,9 @@ namespace Simple_Retail_Management_System.Views
             }
 
         }
-
+        /// <summary>
+        /// Adds a new employee based on the inputs of the user
+        /// </summary>
         private void AddEmployee()
         {
             Console.Clear();
@@ -81,7 +87,9 @@ namespace Simple_Retail_Management_System.Views
         }
 
 
-
+        /// <summary>
+        /// Deletes a employee by the ID given
+        /// </summary>
         private void DeleteEmployee()
         {
             Console.Clear();
@@ -109,7 +117,9 @@ namespace Simple_Retail_Management_System.Views
             PromptContinue();
         }
 
-
+        /// <summary>
+        /// Prints out the properties of a employee by ID
+        /// </summary>
         private void ShowEmployee()
         {
             Console.Clear();
@@ -136,7 +146,9 @@ namespace Simple_Retail_Management_System.Views
             PromptContinue();
         }
 
-
+        /// <summary>
+        /// Prints out the properties of all employees
+        /// </summary>
         private void ShowAllEmployees()
         {
             Console.Clear();
@@ -151,7 +163,9 @@ namespace Simple_Retail_Management_System.Views
             PromptContinue();
         }
 
-
+        /// <summary>
+        /// Updates the properties of a employee by ID
+        /// </summary>
         private void UpdateEmployee()
         {
             Console.Clear();
