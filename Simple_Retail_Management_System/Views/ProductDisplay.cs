@@ -12,7 +12,9 @@ public class ProductDisplay
         productController = new ProductController();
         ProductInput();
     }
-
+        /// <summary>
+        /// Prints out a menu for product
+        /// </summary>
     public void ProductMenu()
     {
             Console.Clear();
@@ -28,7 +30,9 @@ public class ProductDisplay
 
         }
 
-
+        /// <summary>
+        /// Enter a number based on the menu and it executes the corresponding method
+        /// </summary>
         private void ProductInput()
     {
         ProductMenu();
