@@ -65,7 +65,9 @@ public class ProductDisplay
         }
 
     }
-
+        /// <summary>
+        /// Prints out products by their category
+        /// </summary>
         private void ShowProductsByCategory()
         {
             Console.Clear(); // Optional: Clears the console for a clean start
@@ -98,7 +100,9 @@ public class ProductDisplay
             Console.ReadKey();
         }
 
-
+        /// <summary>
+        /// Prints out products by their producer
+        /// </summary>
         private void ShowProductsByProducer()
         {
             Console.Clear(); // Optional: Clears the console for a clean start
@@ -132,6 +136,9 @@ public class ProductDisplay
         }
 
 
+        /// <summary>
+        /// Adds a new product based on the inputs of the user
+        /// </summary>
         private void AddProduct()
         {
             Console.Clear(); // Clears the console for a clean start
@@ -178,7 +185,9 @@ public class ProductDisplay
             Console.WriteLine("\nPress any key to continue...");
             Console.ReadKey();
         }
-
+        /// <summary>
+        /// Deletes a product by the ID given
+        /// </summary>
         private void DeleteProduct()
         {
             Console.Clear(); // Clears the console for a clean start
@@ -202,7 +211,9 @@ public class ProductDisplay
             Console.WriteLine("\nPress any key to continue...");
             Console.ReadKey();
         }
-
+        /// <summary>
+        /// Prints out the properties of a product by ID
+        /// </summary>
         private void ShowProduct()
         {
             Console.Clear(); // Clears the console for a clean start
@@ -229,7 +240,9 @@ public class ProductDisplay
             Console.ReadKey();
         }
 
-
+        /// <summary>
+        /// Updates the properties of a product by ID
+        /// </summary>
         private void UpdateProduct()
         {
             Console.Clear(); // Clears the console for a clean start
