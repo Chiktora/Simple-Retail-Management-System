@@ -12,7 +12,9 @@ namespace Simple_Retail_Management_System.Views
             producerController = new ProducerController();
             ProducerInput();
         }
-
+        /// <summary>
+        /// Prints out a menu for producer
+        /// </summary>
         public void ProducerMenu()
         {
             Console.Clear();
@@ -27,7 +29,9 @@ namespace Simple_Retail_Management_System.Views
 
         }
 
-
+        /// <summary>
+        /// Enter a number based on the menu and it executes the corresponding method
+        /// </summary>
         private void ProducerInput()
         {
             ProducerMenu();
