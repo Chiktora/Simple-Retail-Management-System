@@ -22,6 +22,7 @@ public class CustomerDisplay
         Console.WriteLine("║ 3. Find Customer by Id                   ║");
         Console.WriteLine("║ 4. Show all Customers                    ║");
         Console.WriteLine("║ 5. Update a Customer                     ║");
+        Console.WriteLine("║ 6. Exit Customer Menu                    ║");
         Console.WriteLine("╚" + new string('═', 42) + "╝");
 
     }
@@ -185,6 +186,7 @@ public class CustomerDisplay
 
         PromptContinue();
     }
+    
     private void DisplayHeader(string title)
     {
         Console.WriteLine("╔" + new string('═', 50) + "╗");

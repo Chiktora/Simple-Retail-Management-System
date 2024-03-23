@@ -36,9 +36,7 @@ namespace Simple_Retail_Management_System.Controllers
             else
             {
                 throw new ArgumentException("Category is present");
-            }
-
-            
+            }           
         }
         public void Delete(int id)
         {

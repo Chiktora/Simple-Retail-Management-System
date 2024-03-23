@@ -22,6 +22,7 @@ namespace Simple_Retail_Management_System.Controllers
         {
             this.context = context;
         }
+        
         public void Add(Customer item)
         {
             var existingItem = this.context.Customers.Find(item.Id);

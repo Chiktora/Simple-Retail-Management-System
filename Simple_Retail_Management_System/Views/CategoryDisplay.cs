@@ -20,6 +20,7 @@ public class CategoryDisplay
         Console.WriteLine("║ 3. Find Category by Id                 ║");
         Console.WriteLine("║ 4. Show all Categories                 ║");
         Console.WriteLine("║ 5. Update a Category                   ║");
+        Console.WriteLine("║ 6. Exit Category Menu                  ║");
         Console.WriteLine("╚" + new string('═', 40) + "╝");
 
     }

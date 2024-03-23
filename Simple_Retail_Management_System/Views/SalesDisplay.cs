@@ -48,7 +48,7 @@ namespace Simple_Retail_Management_System.Views
             Console.WriteLine("║ 1. Process a new Sale                    ║");
             Console.WriteLine("║ 2. Delete a Sale                         ║");
             Console.WriteLine("║ 3. Read Sale Details                     ║");
-            Console.WriteLine("║ 4. Exit Sales                            ║");
+            Console.WriteLine("║ 4. Exit Sales Menu                       ║");
             Console.WriteLine("╚" + new string('═', 42) + "╝");
 
         }

@@ -22,6 +22,7 @@ namespace Simple_Retail_Management_System.Views
             Console.WriteLine("║ 3. Find Producer by Id                   ║");
             Console.WriteLine("║ 4. Show all Producers                    ║");
             Console.WriteLine("║ 5. Update a Producer                     ║");
+            Console.WriteLine("║ 6. Exit Producer Menu                    ║");
             Console.WriteLine("╚" + new string('═', 42) + "╝");
 
         }

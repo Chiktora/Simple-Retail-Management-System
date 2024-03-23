@@ -23,6 +23,7 @@ public class ProductDisplay
             Console.WriteLine("║ 4. Update a Product                      ║");
             Console.WriteLine("║ 5. Show products by producer             ║");
             Console.WriteLine("║ 6. Show products by category             ║");
+            Console.WriteLine("║ 7. Exit Product Menu                     ║");
             Console.WriteLine("╚" + new string('═', 42) + "╝");
 
         }

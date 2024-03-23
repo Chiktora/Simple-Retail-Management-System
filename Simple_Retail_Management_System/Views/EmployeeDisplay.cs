@@ -22,6 +22,7 @@ namespace Simple_Retail_Management_System.Views
             Console.WriteLine("║ 3. Find Employee by Id                   ║");
             Console.WriteLine("║ 4. Show all Employees                    ║");
             Console.WriteLine("║ 5. Update an Employee                    ║");
+            Console.WriteLine("║ 6. Exit Employee Menu                    ║");
             Console.WriteLine("╚" + new string('═', 42) + "╝");
 
         }
