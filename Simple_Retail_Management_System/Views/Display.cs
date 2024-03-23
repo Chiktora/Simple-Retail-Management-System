@@ -42,7 +42,7 @@ namespace Simple_Retail_Management_System.Views
                         SalesDisplay salesDisplay = new SalesDisplay();
                         break;
                     case 7:
-                        Console.WriteLine("Program Exit");
+                        ExitProgram();
                         break;
                     default:
                         Console.WriteLine("Option is not available!");
@@ -64,6 +64,25 @@ namespace Simple_Retail_Management_System.Views
             Console.WriteLine("║ 6. Sales Menu                            ║");
             Console.WriteLine("║ 7. Program Exit                          ║");
             Console.WriteLine("╚" + new string('═', 42) + "╝");
+        }
+
+        private void ExitProgram()
+        {
+            Console.Clear();
+            DisplayHeader("Program Exit");
+            Console.WriteLine("Thank you for using our application.");
+            Console.WriteLine("Exiting the program...");
+
+            System.Threading.Thread.Sleep(3600); // Pause for 3.6 seconds.
+
+            Console.Clear();
+        }
+
+        private void DisplayHeader(string title)
+        {
+            Console.WriteLine("╔" + new string('═', 50) + "╗");
+            Console.WriteLine("║" + title.PadRight(50) + "║");
+            Console.WriteLine("╚" + new string('═', 50) + "╝");
         }
     }
 }
