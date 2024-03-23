@@ -6,7 +6,7 @@
         {
             
         }
-        public Sale(int employeeId, int customerId, DateTime saleDate, decimal salesPrice)//vse oshte ne znam dali dateTime sushtestvuva
+        public Sale(int employeeId, int customerId, DateTime saleDate, decimal salesPrice)
         {
             EmployeeId = employeeId;
             CustomerId = customerId;

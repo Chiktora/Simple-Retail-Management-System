@@ -12,8 +12,8 @@ using Simple_Retail_Management_System.Data;
 namespace Simple_Retail_Management_System.Migrations
 {
     [DbContext(typeof(ShopContext))]
-    [Migration("20240319200419_initial")]
-    partial class initial
+    [Migration("20240323092828_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -105,6 +105,9 @@ namespace Simple_Retail_Management_System.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Id")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")

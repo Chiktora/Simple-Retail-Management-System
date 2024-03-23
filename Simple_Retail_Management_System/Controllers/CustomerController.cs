@@ -1,4 +1,5 @@
-﻿using Simple_Retail_Management_System.Controllers.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using Simple_Retail_Management_System.Controllers.Interfaces;
 using Simple_Retail_Management_System.Data;
 using Simple_Retail_Management_System.Data.Models;
 using System;
@@ -16,6 +17,10 @@ namespace Simple_Retail_Management_System.Controllers
         public CustomerController()
         {
             context = new ShopContext();
+        }
+        public CustomerController(ShopContext context)
+        {
+            this.context = context;
         }
         public void Add(Customer item)
         {

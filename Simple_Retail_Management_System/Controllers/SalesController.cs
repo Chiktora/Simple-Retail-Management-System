@@ -17,7 +17,11 @@ namespace Simple_Retail_Management_System.Controllers
              {
                  context = new ShopContext();
              }
-             
+        public SalesController(ShopContext context)
+        {
+            context = new ShopContext();
+        }
+
 
         public void DeleteSale(int saleId)
         {

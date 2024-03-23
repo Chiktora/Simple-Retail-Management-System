@@ -17,6 +17,10 @@ namespace Simple_Retail_Management_System.Controllers
         {
             this.context = new ShopContext();
         }
+        public EmployeeController(ShopContext context) 
+        {
+            this.context = context;
+        }
         public void Add(Employee item)
         {
             var existingItem = this.context.Employees.Find(item.Id);

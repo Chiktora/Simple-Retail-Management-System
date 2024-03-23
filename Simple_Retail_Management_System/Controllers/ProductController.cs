@@ -17,6 +17,10 @@ namespace Simple_Retail_Management_System.Controllers
         {
             context = new ShopContext();
         }
+        public ProductController(ShopContext context)
+        {
+            context = new ShopContext();
+        }
 
         public void AddProduct(string barcode, string name, int stockQuantity, decimal price, string producerName, string categoryName, string additionalText)
         {

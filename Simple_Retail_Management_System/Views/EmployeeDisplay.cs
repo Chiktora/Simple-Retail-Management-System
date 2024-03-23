@@ -59,6 +59,8 @@ namespace Simple_Retail_Management_System.Views
         {
             Employee emp = new Employee();
 
+
+
             Console.WriteLine($"Name: ");
             emp.Name = Console.ReadLine();
             Console.WriteLine($"Phone Number: ");

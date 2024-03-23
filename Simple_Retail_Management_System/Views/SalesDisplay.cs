@@ -38,7 +38,7 @@ namespace Simple_Retail_Management_System.Views
                         Console.WriteLine("Option not available!\nReturning to Main Menu.");
                         break;
                 }
-            } while (operation != 8); // Assuming you want to exit on option 8, adjust as necessary.
+            } while (operation != 4); 
         }
 
         private void SalesMenu()
@@ -47,6 +47,7 @@ namespace Simple_Retail_Management_System.Views
             Console.WriteLine("1. Process a new Sale");
             Console.WriteLine("2. Delete a Sale");
             Console.WriteLine("3. Read Sale Details");
+            Console.WriteLine("4. Exit Sales ");
             Console.WriteLine(new string('-', 40));
         }
 
@@ -77,7 +78,7 @@ namespace Simple_Retail_Management_System.Views
             try
             {
                 // Process the sale
-                salesService.AddSaleWithProductQuantities(employeeId, customerId, saleDate, productBarcodesAndQuantities);
+                salesService.AddSaleWithProductQuantities(employeeId, customerId, saleDate , productBarcodesAndQuantities);
                 Console.WriteLine("Sale processed successfully.");
             }
             catch (ArgumentException ex)

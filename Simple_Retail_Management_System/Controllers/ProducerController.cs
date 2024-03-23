@@ -17,6 +17,10 @@ namespace Simple_Retail_Management_System.Controllers
         {
             this.context = new ShopContext();
         }
+        public ProducerController(ShopContext context)
+        {
+            this.context = context;
+        }
         public void Add(Producer item)
         {
             var existingItem = this.context.Producers.Find(item.Id);
