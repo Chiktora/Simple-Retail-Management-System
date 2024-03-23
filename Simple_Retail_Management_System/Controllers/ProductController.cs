@@ -24,12 +24,14 @@ namespace Simple_Retail_Management_System.Controllers
 
         public void AddProduct(string barcode, string name, int stockQuantity, decimal price, string producerName, string categoryName, string additionalText)
         {
+            //Check if the producer is present.
             var producer = context.Producers.FirstOrDefault(p => p.Name == producerName);
             if (producer == null)
             {
                 throw new ArgumentException($"Producer with name {producerName} not found.");
             }
 
+            //Check if the category is present.
             var category = context.Categories.FirstOrDefault(c => c.CategoryName == categoryName);
             if (category == null)
             {
@@ -78,11 +80,13 @@ namespace Simple_Retail_Management_System.Controllers
             var producer = context.Producers.FirstOrDefault(p => p.Name == newProducerName);
             var category = context.Categories.FirstOrDefault(c => c.CategoryName == newCategoryName);
 
+            //Check if the producer is present.
             if (producer != null)
             {
                 product.ProducerId = producer.Id;
             }
 
+            //Check if the category is present.
             if (category != null)
             {
                 product.CategoryId = category.Id;

@@ -54,15 +54,16 @@ namespace Simple_Retail_Management_System.Views
 
         public void Menu()
         {
-            Console.WriteLine(new string('-', 18) + "MENU" + new string('-', 18));
-            Console.WriteLine("1.Category Menu");
-            Console.WriteLine("2.Customer Menu");
-            Console.WriteLine("3.Employee Menu");
-            Console.WriteLine("4.Producer Menu");
-            Console.WriteLine("5.Product Menu");
-            Console.WriteLine("6.Sales Menu");
-            Console.WriteLine("7 Program Exit");
-            Console.WriteLine(new string('-', 40));
+            Console.Clear();
+            Console.WriteLine("╔" + new string('═', 18) + " MENU " + new string('═', 18) + "╗");
+            Console.WriteLine("║ 1. Category Menu                         ║");
+            Console.WriteLine("║ 2. Customer Menu                         ║");
+            Console.WriteLine("║ 3. Employee Menu                         ║");
+            Console.WriteLine("║ 4. Producer Menu                         ║");
+            Console.WriteLine("║ 5. Product Menu                          ║");
+            Console.WriteLine("║ 6. Sales Menu                            ║");
+            Console.WriteLine("║ 7. Program Exit                          ║");
+            Console.WriteLine("╚" + new string('═', 42) + "╝");
         }
     }
 }

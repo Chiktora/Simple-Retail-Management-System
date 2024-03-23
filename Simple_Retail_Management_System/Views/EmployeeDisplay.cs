@@ -15,13 +15,15 @@ namespace Simple_Retail_Management_System.Views
 
         public void EmployeeMenu()
         {
-            Console.WriteLine(new string('-', 14) + "EmployeeMenu" + new string('-', 14));
-            Console.WriteLine("1. Add a new Employee");
-            Console.WriteLine("2. Delete an Employee");
-            Console.WriteLine("3. Find Employee by Id");
-            Console.WriteLine("4. Show all Employees");
-            Console.WriteLine("5. Update an Employee");
-            Console.WriteLine(new string('-', 40));
+            Console.Clear();
+            Console.WriteLine("╔" + new string('═', 14) + " EmployeeMenu " + new string('═', 14) + "╗");
+            Console.WriteLine("║ 1. Add a new Employee                    ║");
+            Console.WriteLine("║ 2. Delete an Employee                    ║");
+            Console.WriteLine("║ 3. Find Employee by Id                   ║");
+            Console.WriteLine("║ 4. Show all Employees                    ║");
+            Console.WriteLine("║ 5. Update an Employee                    ║");
+            Console.WriteLine("╚" + new string('═', 42) + "╝");
+
         }
 
 
@@ -57,103 +59,159 @@ namespace Simple_Retail_Management_System.Views
 
         private void AddEmployee()
         {
+            Console.Clear();
+            DisplayHeader("Add New Employee");
+
             Employee emp = new Employee();
 
-
-
-            Console.WriteLine($"Name: ");
-            emp.Name = Console.ReadLine();
-            Console.WriteLine($"Phone Number: ");
-            emp.PhoneNumber = Console.ReadLine();
-            Console.WriteLine($"Email: ");
-            emp.Email = Console.ReadLine();
-            Console.WriteLine($"Position: ");
-            emp.Position = Console.ReadLine();
+            Console.Write("Name: ");
+            emp.Name = Console.ReadLine().Trim();
+            Console.Write("Phone Number: ");
+            emp.PhoneNumber = Console.ReadLine().Trim();
+            Console.Write("Email: ");
+            emp.Email = Console.ReadLine().Trim();
+            Console.Write("Position: ");
+            emp.Position = Console.ReadLine().Trim();
 
             employeeController.Add(emp);
+            Console.WriteLine("\nEmployee added successfully.");
+
+            PromptContinue();
         }
+
 
 
         private void DeleteEmployee()
         {
-            Console.WriteLine("Enter ID to delete: ");
-            int id = int.Parse(Console.ReadLine());
-            Employee emp = employeeController.Get(id);
-            if (emp != null)
+            Console.Clear();
+            DisplayHeader("Delete Employee");
+
+            Console.Write("Enter ID to delete: ");
+            if (int.TryParse(Console.ReadLine(), out int id))
             {
-                employeeController.Delete(id);
-                Console.WriteLine("Employee deleted.");
+                Employee emp = employeeController.Get(id);
+                if (emp != null)
+                {
+                    employeeController.Delete(id);
+                    Console.WriteLine("\nEmployee deleted.");
+                }
+                else
+                {
+                    Console.WriteLine("\nEmployee not found.");
+                }
             }
             else
             {
-                Console.WriteLine("Employee not found.");
+                Console.WriteLine("\nInvalid input. Please enter a numeric ID.");
             }
+
+            PromptContinue();
         }
 
 
         private void ShowEmployee()
         {
-            Console.WriteLine("Enter ID to show: ");
-            int id = int.Parse(Console.ReadLine());
-            Employee emp = employeeController.Get(id);
-            if (emp != null)
+            Console.Clear();
+            DisplayHeader("Show Employee Details");
+
+            Console.Write("Enter ID to show: ");
+            if (int.TryParse(Console.ReadLine(), out int id))
             {
-                Console.WriteLine(new string('-', 40));
-                Console.WriteLine("ID: " + emp.Id);
-                Console.WriteLine("Name: " + emp.Name);
-                Console.WriteLine("Phone Number: " + emp.PhoneNumber);
-                Console.WriteLine("Email: " + emp.Email);
-                Console.WriteLine("Position: " + emp.Position);
-                Console.WriteLine("Hire Date: " + emp.HireDate);
+                Employee emp = employeeController.Get(id);
+                if (emp != null)
+                {
+                    DisplayEmployeeDetails(emp);
+                }
+                else
+                {
+                    Console.WriteLine("\nEmployee not found.");
+                }
             }
             else
             {
-                Console.WriteLine("Employee not found.");
+                Console.WriteLine("\nInvalid input. Please enter a numeric ID.");
             }
+
+            PromptContinue();
         }
 
 
         private void ShowAllEmployees()
         {
-            Console.WriteLine("All Employees:");
+            Console.Clear();
+            DisplayHeader("All Employees");
+
             var emps = employeeController.GetAll();
             foreach (var emp in emps)
             {
-                Console.WriteLine(new string('-', 40));
-                Console.WriteLine("ID: " + emp.Id);
-                Console.WriteLine("Name: " + emp.Name);
-                Console.WriteLine("Phone Number: " + emp.PhoneNumber);
-                Console.WriteLine("Email: " + emp.Email);
-                Console.WriteLine("Position: " + emp.Position);
-                Console.WriteLine("Hire Date: " + emp.HireDate);
-                Console.WriteLine(new string('-', 40));
+                DisplayEmployeeDetails(emp);
             }
+
+            PromptContinue();
         }
 
 
         private void UpdateEmployee()
         {
-            Console.WriteLine("Enter ID to Update: ");
-            int id = int.Parse(Console.ReadLine());
-            Employee emp = employeeController.Get(id);
-            if (emp != null)
-            {
-                Console.WriteLine($"Name: ");
-                emp.Name = Console.ReadLine();
-                Console.WriteLine($"Phone Number: ");
-                emp.PhoneNumber = Console.ReadLine();
-                Console.WriteLine($"Email: ");
-                emp.Email = Console.ReadLine();
-                Console.WriteLine($"Position: ");
-                emp.Position = Console.ReadLine();
+            Console.Clear();
+            DisplayHeader("Update Employee");
 
-                employeeController.Update(emp);
+            Console.Write("Enter ID to Update: ");
+            if (int.TryParse(Console.ReadLine(), out int id))
+            {
+                Employee emp = employeeController.Get(id);
+                if (emp != null)
+                {
+                    Console.Write("New Name: ");
+                    emp.Name = Console.ReadLine().Trim();
+                    Console.Write("New Phone Number: ");
+                    emp.PhoneNumber = Console.ReadLine().Trim();
+                    Console.Write("New Email: ");
+                    emp.Email = Console.ReadLine().Trim();
+                    Console.Write("New Position: ");
+                    emp.Position = Console.ReadLine().Trim();
+
+                    employeeController.Update(emp);
+                    Console.WriteLine("\nEmployee updated successfully.");
+                }
+                else
+                {
+                    Console.WriteLine("\nEmployee not found.");
+                }
             }
             else
             {
-                Console.WriteLine("Employee not found!");
+                Console.WriteLine("\nInvalid input. Please enter a numeric ID.");
             }
+
+            PromptContinue();
         }
+
+        private void DisplayHeader(string title)
+        {
+            Console.WriteLine("╔" + new string('═', 50) + "╗");
+            Console.WriteLine("║" + title.PadRight(50) + "║");
+            Console.WriteLine("╚" + new string('═', 50) + "╝");
+        }
+
+        private void DisplayEmployeeDetails(Employee emp)
+        {
+            Console.WriteLine(new string('-', 40));
+            Console.WriteLine($"ID: {emp.Id}");
+            Console.WriteLine($"Name: {emp.Name}");
+            Console.WriteLine($"Phone Number: {emp.PhoneNumber}");
+            Console.WriteLine($"Email: {emp.Email}");
+            Console.WriteLine($"Position: {emp.Position}");
+            Console.WriteLine($"Hire Date: {emp.HireDate.ToString("d")}");
+            Console.WriteLine(new string('-', 40));
+        }
+
+        private void PromptContinue()
+        {
+            Console.WriteLine("\nPress any key to continue...");
+            Console.ReadKey();
+        }
+
 
 
 

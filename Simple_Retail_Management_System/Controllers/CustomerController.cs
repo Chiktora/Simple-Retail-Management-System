@@ -56,7 +56,7 @@ namespace Simple_Retail_Management_System.Controllers
 
         public void Update(Customer item)
         {
-            var existingItem = this.Get(item.Id);
+            var existingItem = this.context.Customers.Find(item.Id);
             if (existingItem != null)
             {
                 this.context.Entry(existingItem).CurrentValues.SetValues(item);

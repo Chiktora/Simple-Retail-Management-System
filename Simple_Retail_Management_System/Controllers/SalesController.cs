@@ -25,14 +25,10 @@ namespace Simple_Retail_Management_System.Controllers
 
         public void DeleteSale(int saleId)
         {
-            var sale = context.Sales.Include(s => s.OrderDetails)
-                                    .FirstOrDefault(s => s.Id == saleId);
+            var sale = context.Sales.Include(s => s.OrderDetails).FirstOrDefault(s => s.Id == saleId);
             if (sale != null)
-            {
-               
-                context.OrderDetails.RemoveRange(sale.OrderDetails);
-
-                
+            {              
+                context.OrderDetails.RemoveRange(sale.OrderDetails);      
                 context.Sales.Remove(sale);
                 context.SaveChanges();
             }

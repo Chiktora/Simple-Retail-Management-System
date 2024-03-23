@@ -1,4 +1,4 @@
-
+﻿
 
 using Simple_Retail_Management_System.Controllers;
 using Simple_Retail_Management_System.Data.Models;
@@ -15,13 +15,15 @@ public class CustomerDisplay
 
     public void CustomerMenu()
     {
-        Console.WriteLine(new string('-', 14) + "CustomerMenu" + new string('-', 14));
-        Console.WriteLine("1. Add a new Customer");
-        Console.WriteLine("2. Delete a Customer");
-        Console.WriteLine("3. Find Customer by Id");
-        Console.WriteLine("4. Show all Customers");
-        Console.WriteLine("5. Update a Customer");
-        Console.WriteLine(new string('-', 40));
+        Console.Clear();
+        Console.WriteLine("╔" + new string('═', 14) + " CustomerMenu " + new string('═', 14) + "╗");
+        Console.WriteLine("║ 1. Add a new Customer                    ║");
+        Console.WriteLine("║ 2. Delete a Customer                     ║");
+        Console.WriteLine("║ 3. Find Customer by Id                   ║");
+        Console.WriteLine("║ 4. Show all Customers                    ║");
+        Console.WriteLine("║ 5. Update a Customer                     ║");
+        Console.WriteLine("╚" + new string('═', 42) + "╝");
+
     }
 
 
@@ -57,96 +59,159 @@ public class CustomerDisplay
 
     private void AddCustomer()
     {
+        Console.Clear();
+        DisplayHeader("Add New Customer");
+
         Customer cus = new Customer();
 
-        Console.WriteLine($"Name: ");
-        cus.Name = Console.ReadLine();
-        Console.WriteLine($"Phone Number: ");
-        cus.PhoneNumber = Console.ReadLine();
-        Console.WriteLine($"Email: ");
-        cus.Email = Console.ReadLine();
+        Console.Write("Name: ");
+        cus.Name = Console.ReadLine().Trim();
+        Console.Write("Phone Number: ");
+        cus.PhoneNumber = Console.ReadLine().Trim();
+        Console.Write("Email: ");
+        cus.Email = Console.ReadLine().Trim();
 
         customerController.Add(cus);
+        Console.WriteLine("\nCustomer added successfully.");
+
+        PromptContinue();
     }
+
 
 
     private void DeleteCustomer()
     {
-        Console.WriteLine("Enter ID to delete: ");
-        int id = int.Parse(Console.ReadLine());
-        Customer cus = customerController.Get(id);
-        if (cus != null)
+        Console.Clear();
+        DisplayHeader("Delete Customer");
+
+        Console.Write("Enter ID to delete: ");
+        if (int.TryParse(Console.ReadLine(), out int id))
         {
-            customerController.Delete(id);
-            Console.WriteLine("Customer deleted.");
+            Customer cus = customerController.Get(id);
+            if (cus != null)
+            {
+                customerController.Delete(id);
+                Console.WriteLine("\nCustomer deleted.");
+            }
+            else
+            {
+                Console.WriteLine("\nCustomer not found.");
+            }
         }
         else
         {
-            Console.WriteLine("Customer not found.");
+            Console.WriteLine("\nInvalid input. Please enter a numeric ID.");
         }
+
+        PromptContinue();
     }
+
 
 
     private void ShowCustomer()
     {
-        Console.WriteLine("Enter ID to show: ");
-        int id = int.Parse(Console.ReadLine());
-        Customer cus = customerController.Get(id);
-        if (cus != null)
+        Console.Clear();
+        DisplayHeader("Show Customer Details");
+
+        Console.Write("Enter ID to show: ");
+        if (int.TryParse(Console.ReadLine(), out int id))
         {
-            Console.WriteLine(new string('-', 40));
-            Console.WriteLine("ID: " + cus.Id);
-            Console.WriteLine("Name: " + cus.Name);
-            Console.WriteLine("Phone Number: " + cus.PhoneNumber);
-            Console.WriteLine("Email: " + cus.Email);
+            Customer cus = customerController.Get(id);
+            if (cus != null)
+            {
+                DisplayCustomerDetails(cus);
+            }
+            else
+            {
+                Console.WriteLine("\nCustomer not found.");
+            }
         }
         else
         {
-            Console.WriteLine("Customer not found.");
+            Console.WriteLine("\nInvalid input. Please enter a numeric ID.");
         }
+
+        PromptContinue();
     }
+
 
 
     private void ShowAllCustomers()
     {
-        Console.WriteLine("All Customers:");
+        Console.Clear();
+        DisplayHeader("All Customers");
+
         var custom = customerController.GetAll();
         foreach (var cus in custom)
         {
-            Console.WriteLine(new string('-', 40));
-            Console.WriteLine("ID: " + cus.Id);
-            Console.WriteLine("Name: " + cus.Name);
-            Console.WriteLine("Phone Number: " + cus.PhoneNumber);
-            Console.WriteLine("Email: " + cus.Email);
-            Console.WriteLine(new string('-', 40));
+            DisplayCustomerDetails(cus);
         }
+
+        PromptContinue();
     }
+
 
 
     private void UpdateCustomer()
     {
-        Console.WriteLine("Enter ID to Update: ");
-        int id = int.Parse(Console.ReadLine());
-        Customer cus = customerController.Get(id);
-        if (cus != null)
-        {
-            Console.WriteLine($"Name: ");
-            cus.Name = Console.ReadLine();
-            Console.WriteLine($"Phone Number: ");
-            cus.PhoneNumber = Console.ReadLine();
-            Console.WriteLine($"Email: ");
-            cus.Email = Console.ReadLine();
+        Console.Clear();
+        DisplayHeader("Update Customer");
 
-            customerController.Update(cus);
+        Console.Write("Enter ID to Update: ");
+        if (int.TryParse(Console.ReadLine(), out int id))
+        {
+            Customer cus = customerController.Get(id);
+            if (cus != null)
+            {
+                Console.Write("New Name: ");
+                cus.Name = Console.ReadLine().Trim();
+                Console.Write("New Phone Number: ");
+                cus.PhoneNumber = Console.ReadLine().Trim();
+                Console.Write("New Email: ");
+                cus.Email = Console.ReadLine().Trim();
+
+                customerController.Update(cus);
+                Console.WriteLine("\nCustomer updated successfully.");
+            }
+            else
+            {
+                Console.WriteLine("\nCustomer not found.");
+            }
         }
         else
         {
-            Console.WriteLine("Customer not found!");
+            Console.WriteLine("\nInvalid input. Please enter a numeric ID.");
         }
+
+        PromptContinue();
+    }
+    private void DisplayHeader(string title)
+    {
+        Console.WriteLine("╔" + new string('═', 50) + "╗");
+        Console.WriteLine("║" + title.PadRight(50) + "║");
+        Console.WriteLine("╚" + new string('═', 50) + "╝");
     }
 
+    private void DisplayCustomerDetails(Customer cus)
+    {
+        Console.WriteLine(new string('-', 40));
+        Console.WriteLine($"ID: {cus.Id}");
+        Console.WriteLine($"Name: {cus.Name}");
+        Console.WriteLine($"Phone Number: {cus.PhoneNumber}");
+        Console.WriteLine($"Email: {cus.Email}");
+        Console.WriteLine(new string('-', 40));
+    }
 
+    private void PromptContinue()
+    {
+        Console.WriteLine("\nPress any key to continue...");
+        Console.ReadKey();
+    }
 
 }
+
+
+
+
     
 
