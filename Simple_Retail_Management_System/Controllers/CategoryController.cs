@@ -24,7 +24,9 @@ namespace Simple_Retail_Management_System.Controllers
         }
 
 
-
+        /// <summary>
+        /// Adds a new category to the context
+        /// </summary>
         public void Add(Category item)
         {
             var existingItem = this.context.Categories.Find(item.Id);
@@ -38,13 +40,18 @@ namespace Simple_Retail_Management_System.Controllers
                 throw new ArgumentException("Category is present");
             }           
         }
+        /// <summary>
+        /// Deletes a category from the context by ID
+        /// </summary>
         public void Delete(int id)
         {
             var item = this.Get(id);  
             this.context.Categories.Remove(item);
             this.context.SaveChanges();            
         }
-
+        /// <summary>
+        /// Retrieves a category by ID
+        /// </summary>
         public Category Get(int id)
         {
             var item = context.Categories.FirstOrDefault(x => x.Id == id);
@@ -52,12 +59,16 @@ namespace Simple_Retail_Management_System.Controllers
             
         }
 
-
+        /// <summary>
+        /// Retrieves all categories
+        /// </summary>
         public List<Category> GetAll()
         {
             return context.Categories.ToList();
         }
-
+        /// <summary>
+        /// Updates an existing category
+        /// </summary>
         public void Update(Category item)
         {
             var existingItem = this.Get(item.Id);
