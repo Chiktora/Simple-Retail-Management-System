@@ -10,7 +10,9 @@ public class CategoryDisplay
         categoryController = new CategoryController();
         CategoryInput();
     }
-
+        /// <summary>
+        /// Prints out a menu for category
+        /// </summary>
     public void CategoryMenu()
     {
         Console.Clear();
@@ -25,7 +27,9 @@ public class CategoryDisplay
 
     }
 
-
+        /// <summary>
+        /// Enter a number based on the menu and it executes the corresponding method
+        /// </summary>
     private void CategoryInput()
     {
         CategoryMenu();
@@ -55,7 +59,9 @@ public class CategoryDisplay
         }
 
     }
-
+        /// <summary>
+        /// Adds a new category based on the inputs of the user
+        /// </summary>
     private void AddCategory()
     {
         Console.Clear();
@@ -73,7 +79,9 @@ public class CategoryDisplay
     }
 
 
-
+        /// <summary>
+        /// Deletes a category by the ID given
+        /// </summary>
     private void DeleteCategory()
     {
         Console.Clear();
@@ -102,7 +110,9 @@ public class CategoryDisplay
     }
 
 
-
+        /// <summary>
+        /// Prints out the properties of a category by ID
+        /// </summary>
     private void ShowCategory()
     {
         Console.Clear();
@@ -133,7 +143,9 @@ public class CategoryDisplay
     }
 
 
-
+        /// <summary>
+        /// Prints out the properties of all categories
+        /// </summary>
     private void ShowAllCategories()
     {
         Console.Clear();
@@ -152,7 +164,9 @@ public class CategoryDisplay
     }
 
 
-
+        /// <summary>
+        /// Updates the properties of a category by ID
+        /// </summary>
     private void UpdateCategory()
     {
         Console.Clear();
