@@ -61,7 +61,9 @@ namespace Simple_Retail_Management_System.Views
             }
 
         }
-
+        /// <summary>
+        /// Adds a new producer based on the inputs of the user
+        /// </summary>
         private void AddProducer()
         {
             Console.Clear();
@@ -84,7 +86,9 @@ namespace Simple_Retail_Management_System.Views
         }
 
 
-
+        /// <summary>
+        /// Deletes a producer by the ID given
+        /// </summary>
         private void DeleteProducer()
         {
             Console.Clear();
@@ -116,7 +120,9 @@ namespace Simple_Retail_Management_System.Views
         }
 
 
-
+        /// <summary>
+        /// Prints out the properties of a producer by ID
+        /// </summary>
         private void ShowProducer()
         {
             Console.Clear();
@@ -151,7 +157,9 @@ namespace Simple_Retail_Management_System.Views
         }
 
 
-
+        /// <summary>
+        /// Prints out the properties of all products
+        /// </summary>
         private void ShowAllProducers()
         {
             Console.Clear();
@@ -173,7 +181,9 @@ namespace Simple_Retail_Management_System.Views
             Console.ReadKey();
         }
 
-
+        /// <summary>
+        /// Updates the properties of a category by ID
+        /// </summary>
         private void UpdateProducer()
         {
             Console.Clear();
