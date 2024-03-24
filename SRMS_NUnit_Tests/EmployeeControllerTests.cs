@@ -44,7 +44,7 @@ using System.Linq;
 
             _controller = new EmployeeController(_mockContext.Object);
 
-    }
+        }
 
     [Test]
     public void Add_NewEmployee_ShouldAddEmployee()
